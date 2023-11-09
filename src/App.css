@@ -1,38 +1,135 @@
+/* Aplicar un tema oscuro global */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #2D2D2D; /* Mantén un fondo oscuro para el tema */
+  color: #C0C0C0; /* Un gris claro para el texto */
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo del contenedor principal */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 800px; /* Ajusta según la anchura deseada */
+  margin: auto;
+  padding: 20px; /* Añadir algo de relleno */
+}
+
+/* Estilo de los títulos */
+h1 {
+  color: #E0E0E0;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 2rem; /* Añadir espacio debajo del título */
+}
+
+/* Estilo del formulario de tareas */
+form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px; /* Aumenta el margen para separar el input del botón */
+  border: 1px solid #555; /* Un borde sutil */
+  border-radius: 5px;
+  background-color: #424242;
+  color: #E0E0E0;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  border: 1px solid #555; /* Añadir un borde para definir los botones */
+  border-radius: 5px;
+  background-color: #5E5E5E; /* Un color gris para el botón */
   color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #484848; /* Un cambio sutil al pasar el ratón por encima */
+  color: #C0C0C0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Estilo de la lista y elementos de tareas */
+.task {
+  display: flex;
+  justify-content: space-between; /* Cambio para justificar el contenido */
+  align-items: center;
+  width: 100%;
+  padding: 15px; /* Añadir algo de relleno */
+  margin-bottom: 15px; /* Aumentar el margen para separar las tareas */
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir una sombra sutil */
+}
+
+.task-text {
+  flex-grow: 1;
+  margin-right: 10px; /* Asegurar espacio entre el texto y el temporizador */
+  color: #E0E0E0; /* Aumentar el contraste para el texto */
+}
+
+.timer {
+  font-size: 1rem;
+  color: #E0E0E0; /* Aumentar el contraste para el temporizador */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #C0C0C0;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+  color: #E0E0E0;
+}
+
+/* Añadir estilos específicos para íconos si es necesario */
+.fa-play, .fa-pause, .fa-redo, .fa-trash {
+  margin: 0 5px;
+}
+
+/* Agregar estilos para la responsividad si es necesario */
+@media (max-width: 768px) {
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .task-text, .timer {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  form, .task {
+    width: 90%;
+  }
+
+  input[type="text"], button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  button {
+    margin-top: 5px;
   }
 }
