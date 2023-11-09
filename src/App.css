@@ -1,9 +1,8 @@
-/* Aplicar un tema oscuro global */
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #2D2D2D; /* Mantén un fondo oscuro para el tema */
-  color: #C0C0C0; /* Un gris claro para el texto */
+  background-color: #222121; /* Un fondo más oscuro */
+  color: #B0BEC5; /* Un gris claro para el texto para mejorar la legibilidad */
   font-family: 'Roboto', sans-serif;
   height: 100%;
 }
@@ -11,6 +10,7 @@ body, html {
 #root {
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -18,97 +18,103 @@ body, html {
 .App {
   display: flex;
   flex-direction: column;
-  max-width: 800px; /* Ajusta según la anchura deseada */
+  width: 90%; /* Ajusta el ancho al que necesites */
+  max-width: 1200px; /* Aumenta el máximo para mayor amplitud */
   margin: auto;
-  padding: 20px; /* Añadir algo de relleno */
+  padding: 20px;
 }
 
 /* Estilo de los títulos */
 h1 {
-  color: #E0E0E0;
+  color: #66BB6A; /* Un verde más suave para el título */
   text-align: center;
-  font-weight: 300;
-  margin-bottom: 2rem; /* Añadir espacio debajo del título */
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 /* Estilo del formulario de tareas */
 form {
   display: flex;
   width: 100%;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 800px; /* Ajusta el ancho del formulario */
   margin-bottom: 1rem;
 }
 
 input[type="text"] {
   flex-grow: 1;
   padding: 10px;
-  margin-right: 10px; /* Aumenta el margen para separar el input del botón */
-  border: 1px solid #555; /* Un borde sutil */
+  margin-right: 10px;
+  border: 1px solid #37474F; /* Borde más suave para el input */
   border-radius: 5px;
-  background-color: #424242;
-  color: #E0E0E0;
+  background-color: #263238; /* Color de fondo más suave para el input */
+  color: #CFD8DC; /* Color de texto para una mejor legibilidad */
   font-size: 1rem;
 }
 
 button {
   padding: 10px 20px;
-  border: 1px solid #555; /* Añadir un borde para definir los botones */
+  border: 1px solid #37474F; /* Borde más suave para el botón */
   border-radius: 5px;
-  background-color: #5E5E5E; /* Un color gris para el botón */
-  color: white;
+  background-color: #2E7D32; /* Un verde oscuro y suave para el botón */
+  color: #CFD8DC; /* Color de texto para una mejor legibilidad */
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: #484848; /* Un cambio sutil al pasar el ratón por encima */
-  color: #C0C0C0;
+  background-color: #388E3C; /* Un verde ligeramente más claro para el efecto hover */
+  color: #ECEFF1;
 }
 
 /* Estilo de la lista y elementos de tareas */
 .task {
   display: flex;
-  justify-content: space-between; /* Cambio para justificar el contenido */
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 15px; /* Añadir algo de relleno */
-  margin-bottom: 15px; /* Aumentar el margen para separar las tareas */
-  background-color: #333;
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #353535; /* Fondo más oscuro para las tareas */
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir una sombra sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-timer span {
+  margin-right: 4px;
 }
 
 .task-text {
   flex-grow: 1;
-  margin-right: 10px; /* Asegurar espacio entre el texto y el temporizador */
-  color: #E0E0E0; /* Aumentar el contraste para el texto */
+  margin-right: 10px;
+  color: #CFD8DC; /* Color de texto más claro */
 }
 
 .timer {
   font-size: 1rem;
-  color: #E0E0E0; /* Aumentar el contraste para el temporizador */
+  color: #CFD8DC; /* Color de texto más claro para el temporizador */
 }
 
 .icon-button {
   background: none;
   border: none;
-  color: #C0C0C0;
+  color: #B0BEC5; /* Iconos más suaves para evitar distracciones */
   cursor: pointer;
   padding: 5px;
   transition: color 0.2s ease-in-out;
 }
 
 .icon-button:hover {
-  color: #E0E0E0;
+  color: #e5eae6; /* Color más suave para el efecto hover */
 }
 
-/* Añadir estilos específicos para íconos si es necesario */
 .fa-play, .fa-pause, .fa-redo, .fa-trash {
   margin: 0 5px;
 }
 
-/* Agregar estilos para la responsividad si es necesario */
+
 @media (max-width: 768px) {
   .task {
     flex-direction: column;
