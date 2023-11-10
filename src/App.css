@@ -18,10 +18,11 @@ body, html {
 .App {
   display: flex;
   flex-direction: column;
-  width: 90%; /* Ajusta el ancho al que necesites */
-  max-width: 1200px; /* Aumenta el máximo para mayor amplitud */
-  margin: auto;
-  padding: 20px;
+  max-width: 800px; 
+  width: 90%;/* Ajusta según la anchura deseada */
+  margin-top: 0; /* Empieza desde la parte superior */
+  margin-bottom: auto;
+  padding: 20px; /* Añadir algo de relleno */
 }
 
 /* Estilo de los títulos */
