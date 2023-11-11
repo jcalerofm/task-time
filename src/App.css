@@ -1,8 +1,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: #222121; /* Un fondo más oscuro */
-  color: #B0BEC5; /* Un gris claro para el texto para mejorar la legibilidad */
+  background-color: #222121; /* Dark background for the theme */
+  color: #B0BEC5; /* Light gray text for legibility */
   font-family: 'Roboto', sans-serif;
   height: 100%;
 }
@@ -14,31 +14,28 @@ body, html {
   align-items: center;
 }
 
-/* Estilo del contenedor principal */
 .App {
   display: flex;
   flex-direction: column;
   max-width: 800px; 
-  width: 90%;/* Ajusta según la anchura deseada */
-  margin-top: 0; /* Empieza desde la parte superior */
+  width: 90%;
+  margin-top: 0;
   margin-bottom: auto;
-  padding: 20px; /* Añadir algo de relleno */
+  padding: 20px;
 }
 
-/* Estilo de los títulos */
 h1 {
-  color: #66BB6A; /* Un verde más suave para el título */
+  color: #66BB6A; /* Soft green for the title */
   text-align: center;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
-/* Estilo del formulario de tareas */
 form {
   display: flex;
   width: 100%;
   margin: 0 auto;
-  max-width: 800px; /* Ajusta el ancho del formulario */
+  max-width: 800px;
   margin-bottom: 1rem;
 }
 
@@ -46,30 +43,29 @@ input[type="text"] {
   flex-grow: 1;
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #37474F; /* Borde más suave para el input */
+  border: 1px solid #37474F;
   border-radius: 5px;
-  background-color: #263238; /* Color de fondo más suave para el input */
-  color: #CFD8DC; /* Color de texto para una mejor legibilidad */
+  background-color: #263238;
+  color: #CFD8DC;
   font-size: 1rem;
 }
 
 button {
   padding: 10px 20px;
-  border: 1px solid #37474F; /* Borde más suave para el botón */
+  border: none;
   border-radius: 5px;
-  background-color: #2E7D32; /* Un verde oscuro y suave para el botón */
-  color: #CFD8DC; /* Color de texto para una mejor legibilidad */
+  background: linear-gradient(145deg, #2E7D32, #388E3C);
+  color: #CFD8DC;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: #388E3C; /* Un verde ligeramente más claro para el efecto hover */
+  background: linear-gradient(145deg, #388E3C, #4CAF50);
   color: #ECEFF1;
 }
 
-/* Estilo de la lista y elementos de tareas */
 .task {
   display: flex;
   justify-content: space-between;
@@ -78,9 +74,9 @@ button:hover {
   margin: 0 auto;
   padding: 15px;
   margin-bottom: 15px;
-  background-color: #353535; /* Fondo más oscuro para las tareas */
+  background: linear-gradient(145deg, #353535, #424242);
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .task-timer span {
@@ -90,31 +86,30 @@ button:hover {
 .task-text {
   flex-grow: 1;
   margin-right: 10px;
-  color: #CFD8DC; /* Color de texto más claro */
+  color: #CFD8DC;
 }
 
 .timer {
   font-size: 1rem;
-  color: #CFD8DC; /* Color de texto más claro para el temporizador */
+  color: #CFD8DC;
 }
 
 .icon-button {
   background: none;
   border: none;
-  color: #B0BEC5; /* Iconos más suaves para evitar distracciones */
+  color: #B0BEC5;
   cursor: pointer;
   padding: 5px;
   transition: color 0.2s ease-in-out;
 }
 
 .icon-button:hover {
-  color: #e5eae6; /* Color más suave para el efecto hover */
+  color: #ECEFF1;
 }
 
 .fa-play, .fa-pause, .fa-redo, .fa-trash {
   margin: 0 5px;
 }
-
 
 @media (max-width: 768px) {
   .task {

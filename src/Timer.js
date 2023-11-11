@@ -4,39 +4,53 @@ import { faPlay, faPause, faRedo } from '@fortawesome/free-solid-svg-icons';
 
 const Timer = ({ task, updateTaskTime, toggleTimer, resetTimer }) => {
   const [seconds, setSeconds] = useState(task.timeSpent);
+  const [isRunning, setIsRunning] = useState(task.isRunning);
+
+  // Sincroniza el estado local `isRunning` con el estado global `task.isRunning`
+  useEffect(() => {
+    setIsRunning(task.isRunning);
+  }, [task.isRunning]);
+
+  // Sincroniza el estado local `seconds` con el estado global `task.timeSpent`
+  useEffect(() => {
+    setSeconds(task.timeSpent);
+  }, [task.timeSpent]);
 
   useEffect(() => {
     let interval;
-    if (task.isRunning) {
+    if (isRunning) {
       interval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
+        setSeconds((prevSeconds) => prevSeconds + 1);
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [task.isRunning]);
+  }, [isRunning]);
 
+  // Actualiza el tiempo en el estado global cuando el contador se detiene o el componente se desmonta
   useEffect(() => {
-    if (!task.isRunning) {
-      updateTaskTime(task.id, seconds);
-    }
-  }, [task.isRunning, seconds]); 
+    updateTaskTime(task.id, seconds);
+  }, [seconds, task.id, updateTaskTime]);
 
+  // Manejador para iniciar/detener el temporizador
   const handleStartStop = () => {
+    setIsRunning(!isRunning);
     toggleTimer(task.id);
   };
 
+  // Manejador para reiniciar el temporizador
   const handleReset = () => {
+    setSeconds(0);
     resetTimer(task.id);
   };
 
-  // Formatear tiempo para mostrar
+  // Formatea el tiempo para mostrarlo
   const formattedTime = new Date(seconds * 1000).toISOString().substr(11, 8);
 
   return (
     <div className="task-timer">
       <span>{formattedTime}</span>
       <button onClick={handleStartStop} className="icon-button">
-        <FontAwesomeIcon icon={task.isRunning ? faPause : faPlay} />
+        <FontAwesomeIcon icon={isRunning ? faPause : faPlay} />
       </button>
       <button onClick={handleReset} className="icon-button">
         <FontAwesomeIcon icon={faRedo} />
